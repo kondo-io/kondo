@@ -33,7 +33,7 @@ def clone(repo, fake=False, clobber=False):
     path = os.path.join(repo.owner.name, repo.name)
 
     if os.path.exists(path):
-        return # Temporary
+        return # Temporarily don't update
         print(' REPO: Updating {repo}'.format(repo=repo.full_name))
         if fake:
             return
@@ -59,7 +59,7 @@ def clone(repo, fake=False, clobber=False):
 
 
 def get_repositories(organizations, users):
-    os.chdir(os.getcwd() + "/cache")
+    os.chdir(os.path.join(os.getcwd(), os.pardir) + "/cache")
     client = GithubHttp(username=os.environ["GITHUB_USER"], token=os.environ["GITHUB_TOKEN"])
     for org_name in set(organizations):
         # org.repositories is a lazy-loaded item, so we don't need to fetch all the info on the org
