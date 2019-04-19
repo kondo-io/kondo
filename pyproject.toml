@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "kondo"
+version = "0.1.0"
+description = ""
+authors = ["Ken Erwin <ken.erwin@traderev.com>"]
+
+[tool.poetry.dependencies]
+github_macros = "^2.0"
+python = "^3.5"
+requests = "^2.21.0"
+python-dateutil = "^2.8.0"
+sh = "^1.12.14"
+
+[tool.poetry.dev-dependencies]
+pytest = "^4.3.0"
+pytest-cov = "^2.6.1"
+better-exceptions = "*"
+
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
