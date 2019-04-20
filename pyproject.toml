@@ -2,7 +2,7 @@
 name = "kondo"
 version = "0.1.0"
 description = ""
-authors = ["Ken Erwin <ken.erwin@traderev.com>"]
+authors = ["Ken Erwin <ken@devopslibrary.com>"]
 
 [tool.poetry.dependencies]
 github_macros = "^2.0"
