@@ -1,4 +1,4 @@
-from kondo.github.get_repository_list import get_repository_list
+from kondo.github_tools.get_repository_list import get_repository_list
 import os
 
 

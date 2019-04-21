@@ -1,8 +1,6 @@
 import os
 import argparse
 import sys
-from github_macros.http import GithubHttp
-from github_macros.models.github import GithubOrganization, GithubUser
 from github import Github
 from sh.contrib import git as git_cmd
 import sh
