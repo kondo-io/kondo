@@ -11,21 +11,15 @@ class Room:
         self.title = title
         self.required_files = required_files
 
-    def validate_repo(self, path):
-        # Temporarily hardcoding configurable values
-        CHANGELOG_DISABLED = False
-        LICENSE_DISABLED = True
-        PRECOMMIT_HOOKS_DISABLED = False
-        GLOBAL_JENKINSFILE_ENABLED = True
-
+    def validate_repo(self, path, settings):
         log = logging.getLogger(__name__)
-        violations = 0
+        violations = []
         log.info('Validating: ' + path + " with room: " + self.title)
         for required_file in self.required_files:
             if os.path.isfile(path + "/" + required_file.name):
                 log.debug("Required file: " + required_file.name + " is present in repository")
             else:
                 log.debug('Required file: ' + required_file.name + ' is NOT in repository')
-                violations = violations + 1
-        log.info('Number of violations in ' + path + ': ' + str(violations))
+                violations.append('Required file: ' + required_file.name + ' was not found in repository.')
+        return violations
 

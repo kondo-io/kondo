@@ -13,6 +13,8 @@ docutils = "^0.14.0"
 PyGithub = "^1.43"
 gitpython = "^2.1"
 pyyaml = "^5.1"
+Flask = "^1.0"
+flask-restplus = "^0.12.1"
 
 [tool.poetry.dev-dependencies]
 pytest = "^4.3.0"
