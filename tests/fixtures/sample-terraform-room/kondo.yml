@@ -1,4 +1,11 @@
 title: terraform-room
+linters:
+  - linter:
+      name: 'Terraform Formatting Check'
+      cmd: 'terraform fmt'
+  - linter:
+      name: 'Terraform Validation'
+      cmd: 'terraform validate'
 variables:
   - variable:
       name: author
