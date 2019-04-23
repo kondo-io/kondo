@@ -3,6 +3,7 @@ from kondo.github_tools.clone_repository import clone_repository
 from kondo.detector.detect_language_type import detect_repository_type
 from kondo.room_engine.room import Room
 from kondo.room_engine.room_loader import room_loader
+from kondo.room_engine.validate_repo import validate_repo
 from flask import Flask
 import os
 import glob
@@ -58,7 +59,8 @@ def main():
         repository_type = detect_repository_type(target_directory)
         room_to_use = chosen_rooms[repository_type]
         log.info("Room to use: " + room_to_use)
-        rooms[room_to_use].validate_repo(target_directory, settings=settings)
+        validation_output = validate_repo(rooms[room_to_use], target_directory, settings=settings)
+        print(validation_output)
 
 
 if __name__ == '__main__':

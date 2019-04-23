@@ -1,6 +1,7 @@
 from kondo.room_engine.room import Room
 from kondo.room_engine.required_file import RequiredFile
 from kondo.room_engine.condition import Condition
+from kondo.room_engine.validate_repo import validate_repo
 import os
 
 
@@ -32,7 +33,7 @@ def test_room_validation():
         "PRECOMMIT_HOOKS_DISABLED": False,
         "GLOBAL_JENKINSFILE_ENABLED": True
     }
-    violations = room.validate_repo('fixtures/sample-terraform-project', settings)
+    violations = validate_repo(room, 'fixtures/sample-terraform-project', settings)
     assert len(violations) == 2
 
 
@@ -57,5 +58,5 @@ def test_room_validation_precommit_hooks_disabled():
         "PRECOMMIT_HOOKS_DISABLED": False,
         "GLOBAL_JENKINSFILE_ENABLED": True
     }
-    violations = room.validate_repo('fixtures/sample-terraform-project', settings)
+    violations = validate_repo(room, 'fixtures/sample-terraform-project', settings)
     assert len(violations) == 1
