@@ -1,8 +1,23 @@
 [tool.poetry]
 name = "kondo"
 version = "0.1.0"
-description = ""
+description = "A better way of ensuring a clean project workspace"
 authors = ["Ken Erwin <ken@devopslibrary.com>"]
+
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Environment :: Console",
+    "Intended Audience :: End Users/Desktop",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.5",
+    "Programming Language :: Python :: 3.6",
+    "Programming Language :: Python :: 3.7",
+    "Topic :: Desktop Environment",
+    "Topic :: Internet",
+    "Topic :: Software Development",
+    "Topic :: Software Development :: Code Generators",
+    "Topic :: Software Development :: Build Tools"
+]
 
 [tool.poetry.dependencies]
 python = "^3.5"
@@ -21,6 +36,9 @@ pytest = "^4.3.0"
 pytest-cov = "^2.6.1"
 better-exceptions = "*"
 docutils = "0.14"
+
+[tool.poetry.scripts]
+kondo = "kondo.cli.main:main"
 
 [build-system]
 requires = ["poetry>=0.12"]
