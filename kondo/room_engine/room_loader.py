@@ -24,4 +24,5 @@ def room_loader(path):
         required_files.append(RequiredFile(name=req_file['file']['name'],
                                            condition=condition))
     return Room(title=data['title'],
-                required_files=required_files)
+                required_files=required_files,
+                rules=False)

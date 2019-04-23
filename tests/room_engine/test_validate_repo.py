@@ -9,7 +9,7 @@ def test_room():
     """Basic testing of a room"""
     title = "test-terraform-room"
     required_files = []
-    room = Room(title=title, required_files=required_files)
+    room = Room(title=title, required_files=required_files, rules=False)
     assert room.title == 'test-terraform-room'
 
 
@@ -26,7 +26,7 @@ def test_room_validation():
                      condition=Condition(condition_type="unless",
                                          condition_value="PRECOMMIT_HOOKS_DISABLED"))
     ]
-    room = Room(title=title, required_files=required_files)
+    room = Room(title=title, required_files=required_files, rules=False)
     settings = {
         "CHANGELOG_DISABLED": False,
         "LICENSE_DISABLED": True,
@@ -51,7 +51,7 @@ def test_room_validation_precommit_hooks_disabled():
                      condition=Condition(condition_type="unless",
                                          condition_value="LICENSE_DISABLED"))
     ]
-    room = Room(title=title, required_files=required_files)
+    room = Room(title=title, required_files=required_files, rules=False)
     settings = {
         "CHANGELOG_DISABLED": False,
         "LICENSE_DISABLED": True,
